@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+:root {
+    --c-brand-1: #0d1926;
+    --c-brand-2: #142436;
+    --c-brand-3: #DDDDDD;
+    --c-brand-4: #009690;
+    --c-brand-5: #233e60;
+}
+
+button, Link {
+    cursor: pointer;
+}
+
+@layer utilities {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .select,
+    .textarea,
+    .input {
+        @apply rounded-lg px-4 py-2 text-sm border border-(--c-brand-2) bg-(--c-brand-5)
+        transition-all duration-30 focus:outline-none
+    }
+
+    .bg-brand-1 {
+        background-color: var(--c-brand-1);
+    }
+
+    .bg-brand-2 {
+        background-color: var(--c-brand-2);
+    }
+
+    .bg-brand-3 {
+        background-color: var(--c-brand-3);
+    }
+
+    .bg-brand-4 {
+        background-color: var(--c-brand-4);
+    }
+
+    .bg-brand-5 {
+        background-color: var(--c-brand-5);
+    }
+
+    .color-brand-1 {
+        color: var(--c-brand-1);
+    }
+
+    .color-brand-2 {
+        color: var(--c-brand-2);
+    }
+
+    .color-brand-3 {
+        color: var(--c-brand-3);
+    }
+
+    .color-brand-4 {
+        color: var(--c-brand-4);
+    }
+
+    .color-brand-5 {
+        color: var(--c-brand-5);
+    }
+
+    .border-c-brand-3 {
+        border-color: var(--c-brand-3);
+    }
+
+    .border-c-brand-4 {
+        border-color: var(--c-brand-4);
+    }
+
+    .border-c-brand-5 {
+        border-color: var(--c-brand-5);
+    }
+
+    .fill-brand-4 {
+        fill: var(--c-brand-4);
+    }
+
+    .stroke-brand-4 {
+        stroke: var(--c-brand-4);
+    }
+
+    .icon-search {
+        fill: var(--c-brand-2);
+        stroke: var(--c-brand-2);
+    }
+
+
+    .spinner {
+        width: 45px;
+        aspect-ratio: 0.75;
+        --c: no-repeat linear-gradient(theme(colors.blue.950) 0 0);
+        background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+        background-size: 20% 50%;
+        animation: rotate 1s infinite linear;
+    }
+
+    @keyframes rotate {
+        20% {
+            background-position: 0% 0%, 50% 50%, 100% 50%;
+        }
+        40% {
+            background-position: 0% 100%, 50% 0%, 100% 50%;
+        }
+        60% {
+            background-position: 0% 50%, 50% 100%, 100% 0%;
+        }
+        80% {
+            background-position: 0% 50%, 50% 50%, 100% 100%;
+        }
+    }
+
+    .dots {
+        @apply border border-(--c-brand-3) rounded-full w-6 h-6 flex justify-center items-center
+    }
+
+    .dots > span {
+        @apply rounded-full w-4 h-4 transition-all duration-300
+    }
+
+    .dots:not(.activeDot) > span {
+        @apply hover:bg-(--c-brand-3) cursor-pointer
+    }
+
+    .activeDot{
+        @apply border-(--c-brand-4);
+    }
+
+    .activeDot span{
+        @apply bg-(--c-brand-4);
+    }
+
+    .custom-shadow {
+        box-shadow: 0 0 6px #0000003b;
+    }
+
+    .custom-checkbox:checked ~ label,
+    .custom-checkbox:checked ~ label::after,
+    .custom-checkbox:checked ~ label > div {
+        opacity: 1;
+    }
+
+    .activeProfileOrder{
+        @apply bg-(--c-brand-1);
+    }
+
+}
+
